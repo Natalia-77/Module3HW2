@@ -9,14 +9,10 @@
 
   <ItemGroup>
     <None Remove="english.json" />
-    <None Remove="russian.json" />
   </ItemGroup>
 
   <ItemGroup>
     <Content Include="english.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="russian.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

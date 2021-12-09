@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using PhoneBook.Models;
 
 namespace PhoneBook.PhoneCollection.Abstractions
 {

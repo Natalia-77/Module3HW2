@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
-using PhoneBook.Configs;
 using PhoneBook.Enum;
 using PhoneBook.Models;
 using PhoneBook.PhoneCollection.Abstractions;
@@ -53,28 +52,18 @@ namespace PhoneBook.PhoneCollection
             foreach (var item in _alphabeth)
             {
                 IReadOnlyCollection<T> listContact = this[item.ToString()];
-                System.Console.WriteLine(item);
+                var count = 0;
                 foreach (var resContact in listContact)
                 {
-                    if (resContact != null)
+                    if (count == 0)
                     {
-                        System.Console.WriteLine($"{resContact.LastName} {resContact.Name}");
+                        System.Console.WriteLine(item.ToString());
                     }
-                }
-            }
-        }
 
-        public void ShowRussian()
-        {
-            foreach (var item in _alphabeth)
-            {
-                IReadOnlyCollection<T> listContact = this[item.ToString()];
-                System.Console.WriteLine(item);
-                foreach (var resContact in listContact)
-                {
                     if (resContact != null)
                     {
                         System.Console.WriteLine($"{resContact.LastName} {resContact.Name}");
+                        count++;
                     }
                 }
             }
@@ -102,7 +91,6 @@ namespace PhoneBook.PhoneCollection
         {
             _symbols.Add(SymdolTypes.Symbol, new List<T>());
             _symbols.Add(SymdolTypes.Number, new List<T>());
-            _symbols.Add(SymdolTypes.Empty, new List<T>());
         }
 
         private List<T> DefineCollection(string contactName)
@@ -119,11 +107,6 @@ namespace PhoneBook.PhoneCollection
                 if (char.IsDigit(res[0]))
                 {
                     return _symbols[SymdolTypes.Number];
-                }
-
-                if (char.IsWhiteSpace(res[0]))
-                {
-                    return _symbols[SymdolTypes.Empty];
                 }
 
                 return _symbols[SymdolTypes.Symbol];

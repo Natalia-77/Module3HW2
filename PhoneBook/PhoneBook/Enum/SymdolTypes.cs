@@ -3,7 +3,6 @@
     public enum SymdolTypes
     {
        Number,
-       Symbol,
-       Empty
+       Symbol
     }
 }
