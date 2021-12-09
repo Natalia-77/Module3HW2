@@ -1,4 +1,6 @@
 ﻿using System;
+using PhoneBook.Models;
+using PhoneBook.PhoneCollection;
 
 namespace PhoneBook
 {
@@ -6,7 +8,15 @@ namespace PhoneBook
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var phoneBook = new PhoneBook<Contact>();
+            phoneBook.Add(new Contact() { Name = "Aarina", LastName = "Allegrova" });
+            phoneBook.Add(new Contact() { Name = "Basha", LastName = "Petrova" });
+            phoneBook.Add(new Contact() { Name = "Darina", LastName = "Vasilyeva" });
+            phoneBook.Add(new Contact() { Name = "Cada", LastName = "Verba" });
+            phoneBook.Add(new Contact() { Name = "Анна", LastName = "Volya" });
+
+            // phoneBook.ShowEnglish();
+            phoneBook.ShowRussian();
         }
     }
 }

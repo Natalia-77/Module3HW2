@@ -2,8 +2,8 @@
 {
     public enum SymdolTypes
     {
-        Symbol,
-        Number,
-        Empty
+       Number,
+       Symbol,
+       Empty
     }
 }
